@@ -1,3 +1,4 @@
+
 #[derive(Debug)]
 struct User {
     active: bool,
@@ -6,14 +7,14 @@ struct User {
     sign_in_count: u64
 }
 
-fn test_struct() {
+pub fn test_struct() {
     let u1 = User {
         active: true,
         name: String::from("Smith Robert"),
         email: String::from("smithr@gmail.com"),
         sign_in_count: 35
     };
-    Println!("u1 is {}", u1);
+    println!("u1 is {:?}", u1);
 }
 
 fn build_user(name: String, email: String) -> User {
@@ -52,7 +53,7 @@ fn test_rectangle() {
         width: 30,
         height: 50
     };
-    println!("The area of rectangle {} is {}", &rect, area);
+    println!("The area of rectangle {:?} is {:?}", &rect, rect.area());
     rect.area();
 }
 
@@ -61,12 +62,12 @@ impl Rectangle {
         self.width * self.height
     }
 
-    fn area(&self, other: &Rectangle) -> bool {
+    fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
 
-    fn square(size: usize) -> Self {
-        self {
+    fn square(size: u32) -> Self {
+        Self {
             width: size,
             height: size,
         }

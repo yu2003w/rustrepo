@@ -1,4 +1,5 @@
-use teststruct;
+
+
 fn main() {
     println!("Hello, world!");
     test_scalar();
@@ -14,13 +15,13 @@ fn main() {
     println!("first word is {}", &first);
 
     println!("first word is {}", first_word(&s));
-
-    test_struct();
+    
+    hello_cargo::teststruct::test_struct();
 }
 
 fn test_scalar() {
     let x: u32 = 5;
-    let y: i32 = 5 / 3;
+    let y: i32 = 5/3;
     println!("{x}/3 is {y}");
     let z = 1;
     println!("z is {z}");
@@ -59,7 +60,7 @@ fn test_reference() {
     //println!("s1 is {s1}, s2 is {s2}");
     //Above code doesn't compile, due to reference restriction.
     // Instead using following code wich introduce other scope to finish that.
-
+   
     println!("s1 is {s1}");
 
     let r1 = &s;
